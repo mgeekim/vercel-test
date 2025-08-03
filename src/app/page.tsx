@@ -2,22 +2,22 @@
 
 import { useState } from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import NavigationTabs from '@/components/NavigationTabs';
-import InvestorFilters from '@/components/InvestorFilters';
-import InvestorCards from '@/components/InvestorCards';
+import Sidebar from '@/components/Sidebar';
+import MainContent from '@/components/MainContent';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('top-investors');
-  const [activeFilter, setActiveFilter] = useState('popular');
+  const [selectedInvestor, setSelectedInvestor] = useState('warren-buffett');
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Header />
-      <Hero />
-      <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-      <InvestorFilters activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
-      <InvestorCards />
-    </main>
+      <div className="flex">
+        <Sidebar
+          selectedInvestor={selectedInvestor}
+          setSelectedInvestor={setSelectedInvestor}
+        />
+        <MainContent selectedInvestor={selectedInvestor} />
+      </div>
+    </div>
   );
 }

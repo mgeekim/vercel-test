@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, MoreHorizontal } from 'lucide-react';
+import { Search, Menu } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -8,13 +8,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">$</span>
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">S</span>
           </div>
-          <div>
-            <h1 className="text-xl font-bold text-gray-900">Stockcircle</h1>
-            <p className="text-xs text-gray-500">formerly Cheaper Than Guru</p>
-          </div>
+          <h1 className="text-xl font-bold text-gray-900">Stockcircle</h1>
         </div>
 
         {/* Search Bar */}
@@ -22,7 +19,7 @@ export default function Header() {
           <div className="relative">
             <input
               type="text"
-              placeholder="Search for stocks and gurus"
+              placeholder="Search stocks, investors..."
               className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
             <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
@@ -30,15 +27,9 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center space-x-6">
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
-            Pro
-          </a>
-          <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">
-            Join
-          </a>
-          <button className="p-2 hover:bg-gray-100 rounded-lg">
-            <MoreHorizontal className="h-5 w-5 text-gray-600" />
+        <div className="flex items-center space-x-4">
+          <button className="text-gray-600 hover:text-gray-900">
+            <Menu className="h-6 w-6" />
           </button>
         </div>
       </div>
